@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BK Spain Survey</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif; /* Establece Arial como la fuente principal */
+    }
+
+    .headerbk {
+      width: 100%;
+      height: 130px; /* Puedes ajustar la altura según sea necesario */
+      background-color: #f5ebdc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .headerbk img {
+      max-width: 65%;
+      max-height: 65%;
+    }
+
+    .mantenteconectado img {
+      max-width: 60%;
+      max-height: 60%;
+    }
+
+    .sociales img {
+      margin-top: 22px;
+      max-width: 32%;
+      max-height: 32%;
+    }
+
+    .texto-principal {
+      margin-top: 50px;
+      margin-left: 35px;
+      margin-right: 35px;
+      text-align: left;
+      font-size: 17px;
+    }
+
+    .texto-codigo {
+      margin-top: 22px;
+      text-align: left;
+      font-size: 17px;
+    }
+
+    .texto-participacion {
+      margin-top: 22px;
+      text-align: left;
+      font-size: 17px;
+    }
+
+    .texto-conectado {
+      margin-top: 45px;
+      text-align: left;
+      font-size: 17px;
+    }
+    
+    /* Estilos para el footer */
+    footer {
+      margin-top: 50px;
+      background-color: #f5ebdc;
+      padding: 50px;
+      text-align: center;
+      color: black; /* Cambia el color del texto a negro */
+    }
+
+    footer p {
+      margin: 70px; /* Margen de 10px en todos los lados del texto */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="headerbk">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Burger_King_2020.svg/800px-Burger_King_2020.svg.png" alt="headerbk">
+  </div>
+
+  <div class="texto-principal">
+    <p>Gracias por completar la encuesta. A BURGER KING® le gustaría invitarte a volver y visitar nuestros restaurantes. No olvides presentar la oferta que aparece en el ticket de caja en tu próxima visita. Debes escribir el siguiente código en el ticket de caja.</p>
+
+    <div class="texto-codigo" id="codigo">
+      <!-- Aquí se mostrará el código generado -->
+    </div>
+
+    <div class="texto-participacion">
+      <p>Muchas gracias por su participación.</p>
+    </div>
+
+    <div class="texto-conectado">
+      <p>Mantente conectado</p>
+    </div>
+
+    <div class="mantenteconectado">
+      <img src="http://hexpserver.ddns.net/conecta.png" alt="conectaimg">
+    </div>
+
+    <div class="sociales">
+      <img src="http://hexpserver.ddns.net/socialbk.png" alt="socialbtt">
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    Powered by Qualtrics
+  </footer>
+
+  <script>
+    // Función para generar un código aleatorio
+    function generarCodigo() {
+      var letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Letras del abecedario
+      var codigo = '';
+
+      // Genera dos letras aleatorias
+      for (var i = 0; i < 2; i++) {
+        codigo += letras.charAt(Math.floor(Math.random() * letras.length));
+      }
+
+      // Genera un número de 5 cifras aleatorio
+      var numero = Math.floor(Math.random() * 100000);
+      codigo += ('00000' + numero).slice(-5); // Asegura que siempre tenga 5 cifras
+
+      return codigo;
+    }
+
+    // Actualiza el elemento con el código generado
+    document.getElementById('codigo').innerHTML = 'Código de validación: ' + generarCodigo();
+  </script>
+</body>
+</html>
