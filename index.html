@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BK Spain Survey</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .headerbk {
+      width: 100%;
+      height: 130px;
+      background-color: #f5ebdc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .headerbk img {
+      max-width: 65%;
+      max-height: 65%;
+    }
+
+    .mantenteconectado img {
+      max-width: 60%;
+      max-height: 60%;
+    }
+
+    .sociales img {
+      margin-top: 22px;
+      max-width: 32%;
+      max-height: 32%;
+    }
+
+    .texto-principal {
+      margin-top: 50px;
+      margin-left: 35px;
+      margin-right: 35px;
+      text-align: left;
+      font-size: 17px;
+    }
+
+    .texto-codigo {
+      margin-top: 22px;
+      text-align: left;
+      font-size: 17px;
+    }
+
+    .texto-participacion {
+      margin-top: 22px;
+      text-align: left;
+      font-size: 17px;
+    }
+
+    .texto-conectado {
+      margin-top: 45px;
+      text-align: left;
+      font-size: 17px;
+    }
+    
+    .footerbk {
+      width: 100%;
+      height: 180px;
+      background-color: #f5ebdc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .footertextfix {
+      text-align: center;
+      margin-top: -190px; /* Compensación para mantener el texto en su posición original */
+    }
+ 
+  </style>
+</head>
+<body>
+  <div class="headerbk">
+    <img src="img/bklogo.png" alt="headerbk">
+  </div>
+
+  <div class="texto-principal">
+    <p>Gracias por completar la encuesta. A BURGER KING® le gustaría invitarte a volver y visitar nuestros restaurantes. No olvides presentar la oferta que aparece en el ticket de caja en tu próxima visita. Debes escribir el siguiente código en el ticket de caja.</p>
+
+    <div class="texto-codigo" id="codigo">
+    </div>
+
+    <div class="texto-participacion">
+      <p>Muchas gracias por su participación.</p>
+    </div>
+
+    <div class="texto-conectado">
+      <p>Mantente conectado</p>
+    </div>
+
+    <div class="mantenteconectado">
+      <img src="img/connectbk.png" alt="conectaimg">
+    </div>
+
+    <div class="sociales">
+      <img src="img/socials.png" alt="socialbtt">
+    </div>
+  </div>
+
+  <div class="footerbk">
+  </div>
+
+  <div class="footertextfix">
+    <p>Powered by HeXp ツ</p>
+  </div>
+
+  <script>
+    // la función como tal
+    function generarCodigo() {
+      var letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Letras del abecedario
+      var codigo = '';
+
+      // genera las dos letras
+      for (var i = 0; i < 2; i++) {
+        codigo += letras.charAt(Math.floor(Math.random() * letras.length));
+      }
+
+      // genera el numero
+      var numero = Math.floor(Math.random() * 100000);
+      codigo += ('00000' + numero).slice(-5); // Asegura que siempre tenga 5 cifras
+      
+      // devuelve el codigo
+      return codigo;
+    }
+
+    // muestra el codigo en el elemento
+    document.getElementById('codigo').innerHTML = 'Código de validación: ' + generarCodigo();
+  </script>
+</body>
+</html>
