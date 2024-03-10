@@ -67,7 +67,7 @@
     footer {
       margin-top: 50px;
       background-color: #f5ebdc;
-      padding: 80px;
+      padding: 120px;
       text-align: center;
       color: black; /* Cambia el color del texto a negro */
     }
@@ -105,28 +105,29 @@
   
   <!-- Footer -->
   <footer>
-    Powered by Qualtrics
+    Powered by HeXp. No abusar!
   </footer>
 
   <script>
-    // Función para generar un código aleatorio
+    // la función como tal
     function generarCodigo() {
       var letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Letras del abecedario
       var codigo = '';
 
-      // Genera dos letras aleatorias
+      // genera las dos letras
       for (var i = 0; i < 2; i++) {
         codigo += letras.charAt(Math.floor(Math.random() * letras.length));
       }
 
-      // Genera un número de 5 cifras aleatorio
+      // genera el numero
       var numero = Math.floor(Math.random() * 100000);
       codigo += ('00000' + numero).slice(-5); // Asegura que siempre tenga 5 cifras
-
+      
+      // devuelve el codigo
       return codigo;
     }
 
-    // Actualiza el elemento con el código generado
+    // muestra el codigo en el elemento
     document.getElementById('codigo').innerHTML = 'Código de validación: ' + generarCodigo();
   </script>
 </body>
